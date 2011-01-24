@@ -1,0 +1,43 @@
+# adjectives and animals
+
+type=ADJECTIVE
+
+happy
+sad
+skinny
+fat
+smart
+lazy
+green
+blue
+brilliant
+fast
+slow
+unhappy
+angry
+
+type=ANIMAL
+
+weasel
+snake
+elephant
+toad
+aardvark
+albatross
+albino rhinocerus
+turkey
+chicken
+bird
+dog
+cat
+donkey
+horse
+mouse
+
+type=INTERJECTION
+
+OMG
+oh my god
+lol
+rofl
+haha

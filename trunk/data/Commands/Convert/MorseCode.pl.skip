@@ -1,0 +1,9 @@
+sub
+{
+	my( $self, $user, $friendly, $params, %style ) = @_;
+
+	use Convert::Morse qw( as_morse );
+
+	$self->sendMessage( as_morse( $params ) );
+return( 1 );
+}

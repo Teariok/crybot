@@ -1,0 +1,17 @@
+# simple insults using the insult words
+
+# you can list as many sentence types here as you want
+# just be sure to change the type using type=whatever
+
+# you can use whatever key words you want inside your sentences
+# key words MUST have a * on either side
+# capitalizing the key words makes them easier to read
+# if you use a key word that has no words, it will replace it in the sentence with a -
+
+type=INSULT
+
+You *INSULTADJECTIVE* *INSULTANIMAL*, get a life!
+*INTERJECTION*, you're a *INSULTPERSON*!
+Don't be a *INSULTPERSON*!
+Go play with your *INSULTADJECTIVE* *INSULTANIMAL*.
+*INTERJECTION*! You *INSULTPERSON*.

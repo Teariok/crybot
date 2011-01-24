@@ -1,0 +1,20 @@
+# nouns and names
+
+type=NOUN
+
+tennis ball
+snow ball
+hat
+shoe
+house
+nose
+tree
+
+type=NAME
+
+Joe
+Sally
+Frank
+Lisa
+John
+Jen

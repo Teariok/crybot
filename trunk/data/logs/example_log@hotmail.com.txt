@@ -1,0 +1,18 @@
+﻿User: hi
+Bot: Hey!
+User: hows it going?
+Bot: I see.
+User: my name is teario
+Bot: That's my master's name too.
+User: what is my name?
+Bot: Aren't you Teario?
+User: Hello
+Bot: Hey, Teario, how are you?
+User: dtguyjil
+Bot: I see.
+User: how are you?
+Bot: Good, how are you?
+User: why?
+Bot: To make you ask questions.
+User: why?
+Bot: To make you ask questions.

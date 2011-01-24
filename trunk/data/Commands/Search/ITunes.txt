@@ -1,0 +1,14 @@
+sub
+{
+	my( $self, $user, $friendly, $params, %style ) = @_;
+	
+	#use LWP::UserAgent::iTMS_Client;
+
+	#my $itunes = LWP::UserAgent::iTMS_Client->new;
+
+	#my @results = $itunes->search( 'all' => $val );
+
+	#$self->sendMessage( @results[0] );
+
+return( 1 );
+}

@@ -1,0 +1,119 @@
+/*
+######################################################
+## RiveScript Library Suite                         ##
+##--------------------------------------------------##
+## Numbers.rsl -- Library of Number Names           ##
+##--------------------------------------------------##
+## Author: Cerone Kirsle <kirsle at rainbowboi.com> ##
+## Created: 1:36 PM 4/15/2006                       ##
+## Updated: 3:05 PM 4/15/2006                       ##
+##--------------------------------------------------##
+## Usage:                                           ##
+##   Use these arrays in your triggers:             ##
+##                                                  ##
+##   @one .. @twenty = lowercase names              ##
+##   @twentyOne .. @oneHundred = follow this pattern##
+######################################################
+*/
+
+! array zero        = zero          0
+! array one         = one           1 i
+! array two         = two           2 ii
+! array three       = three         3 iii
+! array four        = four          4 iv
+! array five        = five          5 v
+! array six         = six           6 vi
+! array seven       = seven         7 vii
+! array eight       = eight         8 viii
+! array nine        = nine          9 ix
+! array ten         = ten          10 x
+! array eleven      = eleven       11 xi
+! array twelve      = twelve       12 xii
+! array thirteen    = thirteen     13 xiii
+! array fourteen    = fourteen     14 xiv
+! array fifteen     = fifteen      15 xv
+! array sixteen     = sixteen      16 xvi
+! array seventeen   = seventeen    17 xvii
+! array eighteen    = eighteen     18 xviii
+! array nineteen    = nineteen     19 xix
+! array twenty      = twenty       20 xx
+! array twentyOne   = twentyone    21 xxi
+! array twentyTwo   = twentytwo    22 xxii
+! array twentyThree = twentythree  23 xxiii
+! array twentyFour  = twentyfour   24 xxiv
+! array twentyFive  = twentyfive   25 xxv
+! array twentySix   = twentysix    26 xxvi
+! array twentySeven = twentyseven  27 xxvii
+! array twentyEight = twentyeight  28 xxviii
+! array twentyNine  = twentynine   29 xxix
+! array thirty      = thirty       30 xxx
+! array thirtyOne   = thirtyone    31 xxxi
+! array thirtyTwo   = thirtytwo    32 xxxii
+! array thirtyThree = thirtythree  33 xxxiii
+! array thirtyFour  = thirtyfour   34 xxxiv
+! array thirtyFive  = thirtyfive   35 xxxv
+! array thirtySix   = thirtysix    36 xxxvi
+! array thirtySeven = thirtyseven  37 xxxvii
+! array thirtyEight = thirtyeight  38 xxxviii
+! array thirtyNine  = thirtynine   39 xxxix
+! array forty       = forty        40 xl
+! array fortyOne    = fortyone     41 xli
+! array fortyTwo    = fortytwo     42 xlii
+! array fortyThree  = fortythree   43 xliii
+! array fortyFour   = fortyfour    44 xliv
+! array fortyFive   = fortyfive    45 xlv
+! array fortySix    = fortysix     46 xlvi
+! array fortySeven  = fortyseven   47 xlvii
+! array fortyEight  = fortyeight   48 xlviii
+! array fortyNine   = fortynine    49 xlix
+! array fifty       = fifty        50 l
+! array fiftyOne    = fiftyone     51 li
+! array fiftyTwo    = fiftytwo     52 lii
+! array fiftyThree  = fiftythree   53 liii
+! array fiftyFour   = fiftyfour    54 liv
+! array fiftyFive   = fiftyfive    55 lv
+! array fiftySix    = fiftysix     56 lvi
+! array fiftySeven  = fiftyseven   57 lvii
+! array fiftyEight  = fiftyeight   58 lviii
+! array fiftyNine   = fiftynine    59 lix
+! array sixty       = sixty        60 lx
+! array sixtyOne    = sixtyone     61 lxi
+! array sixtyTwo    = sixtytwo     62 lxii
+! array sixtyThree  = sixtythree   63 lxiii
+! array sixtyFour   = sixtyfour    64 lxiv
+! array sixtyFive   = sixtyfive    65 lxv
+! array sixtySix    = sixtysix     66 lxvi
+! array sixtySeven  = sixtyseven   67 lxvii
+! array sixtyEight  = sixtyeight   68 lxviii
+! array sixtyNine   = sixtynine    69 lxix
+! array seventy     = seventy      70 lxx
+! array seventyOne  = seventyone   71 lxxi
+! array seventyTwo  = seventytwo   72 lxxii
+! array seventyThree= seventythree 73 lxxiii
+! array seventyFour = seventyfour  74 lxxiv
+! array seventyFive = seventyfive  75 lxxv
+! array seventySix  = seventysix   76 lxxvi
+! array seventySeven= seventyseven 77 lxxvii
+! array seventyEight= seventyeight 78 lxxviii
+! array seventyNine = seventynine  79 lxxix
+! array eighty      = eighty       80 lxxx
+! array eightyOne   = eightyone    81 lxxxi
+! array eightyTwo   = eightytwo    82 lxxxii
+! array eightyThree = eightythree  83 lxxxiii
+! array eightyFour  = eightyfour   84 lxxxiv
+! array eightyFive  = eightyfive   85 lxxxv
+! array eightySix   = eightysix    86 lxxxvi
+! array eightySeven = eightyseven  87 lxxxvii
+! array eightyEight = eightyeight  88 lxxxviii
+! array eightyNine  = eightynine   89 lxxxix
+! array ninety      = ninety       90 xc
+! array ninetyOne   = ninetyone    91 xci
+! array ninetyTwo   = ninetytwo    92 xcii
+! array ninetyThree = ninetythree  93 xciii
+! array ninetyFour  = ninetyfour   94 xciv
+! array ninetyFive  = ninetyfive   95 xcv
+! array ninetySix   = ninetysix    96 xcvi
+! array ninetySeven = ninetyseven  97 xcvii
+! array ninetyEight = ninetyeight  98 xcviii
+! array ninetyNine  = ninetynine   99 xcix
+! array oneHundred  = onehundred  100 c

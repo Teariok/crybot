@@ -1,0 +1,888 @@
+=head1 NAME
+
+RiveScript::Tutorial - A beginner's guide to creating their
+first RiveScript brain.
+
+=head1 INTRODUCTION
+
+This tutorial outlines the various capabilities of the RiveScript
+specification and offers some recommended pointers for creating a
+well-formed RiveScript brain. What you do with this knowledge is
+up to you; be creative!
+
+Be sure to skim over the RiveScript manpage first, because this
+tutorial jumps right in to using the various RiveScript commands without
+always explaining what each of them do.
+
+=head2 A Simple RiveScript Interpreter
+
+Here is a simple Perl script for running a RiveScript interpreter.
+This assumes that the brain's RS files will be stored in a directory
+called "tutorial", local to the Perl script. You'd want to edit certain
+parameters in this code if you see fit.
+
+  #!/usr/bin/perl -w
+
+  use strict;
+  use warnings;
+  use RiveScript;
+
+  # Create the RiveScript interpreter.
+  my $rive = new RiveScript();
+
+  # Load the RS tutorial brain.
+  $rive->loadDirectory ("./tutorial");
+
+  # Sort them.
+  $rive->sortReplies;
+
+  # Go into a chatting loop.
+  while (1) {
+    print "User> ";
+    my $msg = <STDIN>;
+    chomp $msg;
+
+    # Grab a reply.
+    my @reply = $rive->reply ('user',$msg);
+    print " Bot> $_\n" foreach(@reply);
+  }
+
+=head1 GETTING STARTED
+
+=head2 Structure of a Good Brain
+
+By "A Good Brain" I mean a brain written to certain standards. Much
+like how an HTML file can be written any way you want, but the W3C
+sets up standards for how to write them.
+
+A good RiveScript brain has at least files named B<config.rs> and
+B<begin.rs>. "config.rs" would be for configuration of the bot, setting
+up variables, substitutions, etc. This file's name I<isn't> absolutely
+required to be "config.rs" but that's a good name as far as following
+standards goes.
+
+The "begin.rs" file, on the other hand, is more of a required name.
+In the B<loadDirectory> method, a file named "begin.rs" is loaded in
+I<first>, before any other file. In this way, it has two purposes:
+
+  1. To load in any libraries or packages, since they'll be then
+     loaded in first and any brain-specified objects will override
+     the library's ones.
+  2. To hold the BEGIN Statement.
+
+We'll get into both of these later.
+
+=head2 The config.rs File
+
+To begin the creation of our RiveScript brain, save the above Perl
+code into a file (if you haven't already done so), and then create
+a folder named "tutorial" in the directory you saved the Perl file.
+
+Open a text editor (such as Notepad). RiveScript documents are just
+text files so any editor should do just fine (provided it doesn't
+assume you're creating a non-plaintext file and adds in strange
+characters).
+
+First, we'll set up some global bot variables to give our bot a name
+and some basic information.
+
+  ! var name     = RiveScript
+  ! var lastname = Tutorial
+  ! var gender   = machine
+  ! var age      = 0
+
+You can follow that pattern to make any additional variables to give
+your bot a "personality."
+
+Next we'll create an array or two. Arrays can be used later in triggers
+to make a specified set of matchable words. We'll create two arrays,
+one for color names and one for the verb "to be"
+
+  ! array colors = red blue green yellow cyan fuchsia orange
+  ^ black white silver gold gray grey pink
+  ! array be = am is are was were
+
+Then we'll set up some substitutions. These are statements to
+substitute things in the user's message with something else. This
+set of code should get you started, but you can add substitutions
+for anything else you can think of, too.
+
+  ! sub &quote;   = quot
+  ! sub &apos;    = apos
+  ! sub &amp;     = amp
+  ! sub &lt;      = lt
+  ! sub &gt;      = gt
+  ! sub +         = plus
+  ! sub -         = minus
+  ! sub /         = divided
+  ! sub *         = times
+  ! sub i'm       = i am
+  ! sub i'd       = i would
+  ! sub i've      = i have
+  ! sub i'll      = i will
+  ! sub don't     = do not
+  ! sub isn't     = is not
+  ! sub you'd     = you would
+  ! sub you're    = you are
+  ! sub you've    = you have
+  ! sub you'll    = you will
+  ! sub he'd      = he would
+  ! sub he's      = he is
+  ! sub he'll     = he will
+  ! sub she'd     = she would
+  ! sub she's     = she is
+  ! sub she'll    = she will
+  ! sub they'd    = they would
+  ! sub they're   = they are
+  ! sub they've   = they have
+  ! sub they'll   = they will
+  ! sub we'd      = we would
+  ! sub we're     = we are
+  ! sub we've     = we have
+  ! sub we'll     = we will
+  ! sub whats     = what is
+  ! sub what's    = what is
+  ! sub what're   = what are
+  ! sub what've   = what have
+  ! sub what'll   = what will
+  ! sub can't     = can not
+  ! sub whos      = who is
+  ! sub who's     = who is
+  ! sub who'd     = who would
+  ! sub who'll    = who will
+  ! sub don't     = do not
+  ! sub didn't    = did not
+  ! sub it's      = it is
+  ! sub could've  = could have
+  ! sub should've = should have
+  ! sub would've  = would have
+  ! sub when's    = when is
+  ! sub when're   = when are
+  ! sub when'd    = when did
+  ! sub u         = you
+  ! sub ur        = your
+  ! sub r         = are
+  ! sub im        = i am
+  ! sub wat       = what
+  ! sub wats      = what is
+
+Finally, we'll define some "person" substitutions. These are
+special substitutions used for the bot's reply. Anything between
+the tags B<{person}> and B<{/person}> in the bot's reply uses
+these substitutions. The purpose of this is to swap first- and
+second-person pronouns.
+
+  ! person you = me
+  ! person me  = you
+  ! person am  = are
+  ! person are = am
+
+And now save this file as "B<config.rs>" (you may need to put
+quotes around the filename in Windows if you haven't already
+associated a program with that extension!)
+
+=head2 The begin.rs File
+
+The second file recommended for a good brain is call "begin.rs"
+and here is where we'll load in libraries, and set up our "begin"
+statement.
+
+So first, we'll load in a library that comes with the RiveScript
+distribution: English. It gives us a lot of arrays of various
+English verbs, nouns, and adjectives, along with their other varied
+forms.
+
+  ! include English.rsl
+
+And now for the BEGIN statement. The BEGIN statement is a block of
+replies that uses the E<gt> label for "begin". By default, this block
+takes only one preset trigger from the user: "request"
+
+When the reply to "request" contains the B<{ok}> tag in it, then a
+normal reply for the user's message is obtained and substituted back
+into the "request" reply, where the B<{ok}> tag is.
+
+  > begin
+    + request
+    - {ok}
+  < begin
+
+This is the simplest form for a BEGIN statement. You can use conditionals
+and other things here too, which we'll get into later in the tutorial.
+But for now, the user B<request>s a reply, and the bot returns one.
+
+=head1 CREATING REPLY FILES
+
+While config.rs and begin.rs are RiveScript documents, there's not much
+for it being able to give an intelligent response to your message.
+
+=head2 Add Some "Hello" Replies
+
+=head3 A Basic Trigger
+
+We'll start in a logical place: hello's and goodbye's. After all, hello's
+are the first things exchanged when you talk with somebody. Create a new
+RiveScript document (new text document) and add a simple reply like so:
+
+  + hello
+  - Hello there, human.
+
+Now we have something to test. Save this as "greetings.rs" in the
+"tutorial" folder with your other RiveScript documents, then run the
+Perl code you saved earlier to test the bot. At the "UserE<gt>"
+prompt, type "hello" and the bot should reply "Hello there, human."
+
+=head3 Random Responses
+
+Now we'll make this trigger return a random reply. Currently, no matter
+how many times you say "hello", the bot's reply will never change. This
+can be fixed by adding more than one response to the trigger:
+
+  + hello
+  - Hello there, human.
+  - Hey, how are you?
+  - Hi there.
+  - Hello. :)
+
+Save and test the bot again. Now, say "hello" to it a few times and it
+should randomly choose one of those four responses to give you.
+
+=head3 Weighted Random Responses
+
+Now, let's put some weights on certain responses. For instance, the
+"Hello there, human." seems quite cold and heartless--a good response
+for an impulse-driven machine. But for the sake of emotional security,
+the bot should use that reply a lot less than the other ones.
+
+Using the {weight} tag on the responses will change the probability of
+them being chosen. So here, we'll add weights to all the triggers except
+for the one calling you a human:
+
+  + hello
+  - Hello there, human.
+  - Hey, how are you?{weight=3}
+  - Hi there.{weight=2}
+  - Hello. :){weight=4}
+
+Note that if a {weight} tag isn't specified, the trigger assumes a weight
+of 1. Now, there is a total of 10 weights in these replies: 3 + 2 + 4, and
+then +1 for the "Hello there, human." response.
+
+So, "Hey, how are you?" has a 3 in 10 chance of being chosen, "Hello. :)"
+has a 4 in 10 chance, "Hi there." has a 2 in 10 chance, and finally
+"Hello there, human." has a 1 in 10 chance of being chosen.
+
+Try it! Save and test the bot again and say "hello" quite a few times.
+Compared to the other responses it gives you, it should say "Hello there,
+human." considerably less often.
+
+=head3 Redirected Triggers
+
+Now that we're fairly comfortable with this response, we'll add a couple
+other triggers that will point back to this one. So the user can say "hi"
+or "hey" and still get the same effect as if he had said "hello." We
+could, of course, just make substitutions to change "hey" into "hello"
+but that would ruin the sake of learning how to code RiveScript files. ;)
+
+  + hey
+  @ hello
+
+  + hi
+  @ hello
+
+The "@" command redirects the user to another trigger: "hello". In this
+case, saying "hey" or "hi" will return a reply as if the user had just
+typed "hello" instead. Save and test this.
+
+You can follow this pattern to add some more triggers for goodbyes now, too.
+
+=head2 Wildcards, Variables, and String Modifiers
+
+=head3 Using Wildcards
+
+Let's add a few more triggers. These ones will be open-ended, allowing
+the user to say something to "fill in a blank," and what they say can
+be matched using the E<lt>starE<gt> tags.
+
+Create a new RiveScript document and save it as "users.rs" -- this file
+will contain triggers specifically geared for learning and repeating
+user details.
+
+For our first example of using a wildcard, we'll allow the user to tell us
+their name.
+
+  + my name is *
+  - Nice to meet you, <star>!
+
+Save and test it. Say "my name is Bob" or "my name is Steve" and see how
+the bot replies. Before moving on, we'll put in another trigger to test
+the use of multiple wildcards:
+
+  + * would describe me as *
+  - So do you always get described as <star2> by <star1>?
+
+When you're dealing with more than one wildcard, you'll need to include a
+number in the E<lt>starE<gt> tag. The stars are matched from left to right.
+In this example, if you say "John would describe me as eccentric", E<lt>star1E<gt>
+would be "John" and E<lt>star2E<gt> would be "eccentric"
+
+=head3 Saving User Variables
+
+The E<lt>setE<gt> tag can be used to set a B<user variable>. User variables are
+variables specific to the current user. For example, your bot can learn a user's
+name and address that user by name from then on, while keeping a different name
+for a different user. You can also think of these as "local variables," local
+to each user.
+
+So, when the user tells us their name, we should remember it for them:
+
+  + my name is *
+  - <set name=<star>>Nice to meet you, <star>.
+
+Here's another example for clarification:
+
+  + i am * years old
+  - <set age=<star>>A lot of people are <star> years old--you're not alone.
+
+=head3 Numeric Variable Modifiers
+
+There are four tags, E<lt>addE<gt>, E<lt>subE<gt>, E<lt>multE<gt>, and E<lt>divE<gt>,
+for adding, subtracting, multiplying and dividing numeric variables, respectively.
+
+  + today is my birthday
+  - <add age=1>Happy birthday, <get name>!
+
+If the variable being modified hasn't been defined yet, it is set to 0 before
+being manipulated. If you manipulate a non-number variable, or add a non-numeric
+value to a variable, you'll get an error in place of the tag.
+
+=head3 Retrieving User Variables
+
+The E<lt>getE<gt> tag is for retrieving a user variable and putting it into the
+bot's response.
+
+  + what is my name
+  - You told me your name was <get name>.
+
+=head3 Bot Variables
+
+While we're on the topic of variables, the bot variables we declared back when
+we created the "config.rs" file can be retrieved in E<lt>botE<gt> tags.
+
+The E<lt>botE<gt> tag is also the only tag that can go inside of the trigger
+part. So while we're on the "users.rs" file, we'll add a trigger for if the
+user has the same name as the bot.
+
+  + my name is <bot name>
+  - <set name=<bot name>>Is it really? Don't tell me your last\s
+  ^ name is <bot lastname> too. ;)
+
+Also note that this example used a carat to extend the reply. When you do this,
+you'll usually want to include a \s at the end of the previous line, to put a
+space between the two parts of the reply (otherwise it would say "Don't tell me
+your lastname is Tutorial too.", without a space between "last" and "name")
+
+=head3 Environment Variables
+
+RiveScript environment variables can be retrieved in the E<lt>botE<gt> tag. The
+variable names all begin with "ENV_" and are all uppercase.
+
+RiveScript's native variables are as follows:
+
+  ENV_OS         = The operating system running the interpreter
+  ENV_APPVERSION = The version of RiveScript being used.
+  ENV_APPNAME    = The full string of RiveScript version (i.e. "RiveScript/1.0")
+
+To access Perl environment variables, append "ENV_SYS_" to whatever environment
+variable you want to use. For instance, when used in online CGI context, the following
+reply would be valid:
+
+  + what is my ip address
+  - Your IP is <bot ENV_SYS_REMOTE_ADDR>.
+
+=head3 String Modifiers
+
+By now you may have noticed that the bot stores your name in lowercase. This is
+because, regardless of how you format your message while typing, RiveScript removes
+punctuation and lowercases what you say.
+
+In most cases, for variable storage uses, this is alright. But for formal things
+such as a name, you want them to be formatted to start with capital letters.
+
+To start this section, we'll go back to the C<my name is *> trigger added under
+E<"Saving User Variables">.
+
+To formalize the name, use the B<{formal}> tag:
+
+  + my name is *
+  - <set name={formal}<star>{/formal}>Nice to meet you, <star>.
+
+Now the name is stored with capitilizations where needed (if you ask the bot your
+name, as we did in the last step, it will say it correctly). So we have one of
+two options:
+
+  + my name is *
+  - <set name={formal}<star>{/formal}>Nice to meet you, {formal}<star>{/formal}.
+
+This one will formalize E<lt>starE<gt> in both instances. It's not the greatest
+to look at.
+
+A feature of RiveScript is that E<lt>setE<gt> tags are run before E<lt>getE<gt>
+tags are. So to condense that last example:
+
+  + my name is *
+  - <set name={formal}<star>{/formal}>Nice to meet you, <get name>.
+
+That looks a little nicer.
+
+While we're on the topic of string modifiers, the other ones are {uppercase}
+and {lowercase}, which will make the text uppercase or lowercase, and then
+{sentence} is to make it sentence-cased (where the first word is formal but
+the rest is lowercase).
+
+=head3 Catch-All Trigger
+
+By now in your testing, you may notice that if you say something that isn't
+matched by a trigger, you always get an "ERR: No Reply" back. This can be done
+by creating a trigger that consists of nothing but a wildcard symbol.
+
+Internally, replies are sorted with triggers containing the most whole words
+first, all the way to the triggers containing no whole words. So in this way,
+a trigger of just C<*> is checked last.
+
+Create a new reply file called "star.rs" with this trigger inside:
+
+  + *
+  - I'm not sure how to reply to that one.
+
+Save and test. Say something that the bot doesn't already know how to reply to.
+
+You can be creative with the user of this trigger too: using random replies,
+weighting the replies, etc. -- treat it like a normal trigger.
+
+=head2 Alternations, Arrays, and Optionals
+
+Note that alternations and optionals are matched in the E<lt>starE<gt> tags.
+If you combine them with wildcards, make a note of this.
+
+=head3 Alternations in the Trigger
+
+Alternations can be used in the trigger to add a little bit of "lee-way" among
+the user's choice of words, but not as much leeway as you'd get with a wildcard.
+
+Create a new file named "bot.rs" which will be used to keep triggers relating
+to the bot itself (users the question would ask about the bot). Now for a quick
+example of using alternations, add a trigger like this:
+
+  + what (s|is) your (work|home|cell) phone number
+  - You can call me at 555-5555.
+
+Save and test it. This will match every message from "what s your work phone number"
+to "what is your cell phone number", but it won't be matched if the user doesn't
+choose any of the words provided.
+
+=head3 Optionals in the Trigger
+
+An optional word is one that can be matched in a trigger, but doesn't have to be.
+We'll edit the reply we just created in the last section to read like this:
+
+  + what (s|is) your [work|home|cell] phone number
+  - You can call me at 555-5555.
+
+Now you can ask "what is your phone number" without specifying which number you
+wanted. The "work OR home OR cell" words don't have to exist in the user's message
+at all. What purpose does this serve? You can take care of possible useless variations
+of a trigger.
+
+  + how are you [today]
+  - I am great, how are you?
+
+So that would match "how are you" OR "how are you today", and you don't need
+to use multiple triggers to handle it.
+
+=head3 Arrays in the Trigger
+
+When we created the "config.rs" file, we declared some arrays. One of these was
+an array named "colors" which was full of color names.
+
+Open the "users.rs" file we created before (if necessary). We'll be adding a trigger
+that allows the user to tell us their favorite color, but ONLY if they chose a valid
+color name from our array.
+
+  + my favorite color is (@colors)
+  - <set color=<star>>I think <star> is a nice color too.
+
+When the array is inside of parenthesis, it is matchable with a E<lt>starE<gt> tag.
+If you omit the parenthesis, it is not matchable. Here's a quick example to test that:
+
+  + do you like the color @colors
+  - Yeah, <star> is a nice color.
+
+In this example, the color you say should not appear in the bot's reply.
+
+=head3 Creating Complex Triggers
+
+Optionals, alternations, and arrays can all be combined into triggers to condense
+a lot of triggers down to just one or two.
+
+In this example, the user can ask anything from "what is the time" to "what time is it"
+
+  + [what] [@be] [the] time [@be] [it]
+  - I don't know what time it is, go find a clock.
+
+RiveScript is capable of actually giving the time, through an object. We'll get into
+this later in the tutorial.
+
+=head2 Reply Conditionals
+
+=head3 "Equals" Condition
+
+Conditionals can be used in responses to check for values (or lack thereof) of user
+OR bot variables. In this example, the bot will give a specific reply if the user
+is named "Bob" and a different one otherwise.
+
+In your "users.rs" add this trigger:
+
+  + is my name bob
+  * name = Bob => Yes, that's your name.
+  - No, you are <get name>, silly!
+
+Multiple conditions can be used to one trigger as well:
+
+  + is my name bob or tom
+  * name = Bob => You're Bob.
+  * name = Tom => You're Tom.
+  - You're neither Bob nor Tom.
+
+To check the value of a bot variable in a condition, put a pound sign in front
+of the variable name.
+
+  + is your name rivescript
+  * #name = RiveScript => Yes, that's my name.
+  - No, I am <bot name>.
+
+=head3 Numeric Comparisons
+
+In place of the "equals" sign in the conditions above, you can use numeric
+operators to check values of numeric variables.
+
+  + am i a juvenile
+  * age <  18 => Yes, you're under 18.
+  * age >= 18 => No, you're at least 18 years old.
+  - I don't know; I don't think I know how old you are.
+
+Conditionals are checked in order of appearance. When one returns false, the
+next one down the line is checked, and so-on. If all conditionals are false,
+a normal reply should be provided. Random replies can be used here too.
+
+Note: this reply won't work unless you have another reply for setting a
+value for the variable "points"
+
+  + do i have enough points
+  * points >= 500 => Yes, you have at least 500 points.
+  - No, why do you want to know?
+  - No, go earn some.
+  - Why do you care so much about points?
+
+=head3 "Defined" Condition
+
+Sometimes, rather than checking a value of a variable, you just want to know
+if the variable has been defined. In this case, just use a "?" as the check
+sign.
+
+  + do you know my name
+  * name ? => Yes, your name is <get name>.
+  - No, what is your name?
+
+=head2 Keeping it in Context
+
+You can use the %PREVIOUS command in a RiveScript file to continue a thought
+about the last thing the bot said. Open "greetings.rs" and add a trigger
+for this:
+
+  + how are you
+  - Good, how are you?
+
+Now to use the %PREVIOUS command, take the bot's last reply, lowercase and
+without punctuation, and use it like this:
+
+  + good
+  % good how are you
+  - That's great.
+
+So if the user says "how are you" and then says "good", the bot will say
+"That's great." but if the user says something else, the bot will answer that
+like normal too.
+
+=head2 Person Substitutions
+
+The point of person substitutions is to replace first- and second-person
+pronouns in the bot's reply. For instance:
+
+  + do you think i *
+  - I don't think you {person}<star>{/person}.
+
+  "Do you think I hate you?"
+  "I don't think you hate me."
+
+In that case, it substitutes "you" for "me" so that its reply makes more sense.
+Otherwise it would've said "I don't think you hate B<you>" and not make any sense.
+
+=head2 Topics
+
+Topics are sets of responses. While a user is in a topic, he can only match
+the triggers specified under that topic. He can not match triggers under a
+different topic.
+
+The default topic is "B<random>"
+
+To set a topic, use the {topic} tag. To declare a topic, use the LABEL commands.
+
+Here's an example of a topic set to handle abusive users:
+
+  + i hate you
+  - I don't like you either. Not apologize or I won't talk with you.{topic=sorry}
+
+  > topic sorry
+    + *
+    - Say that you're sorry.
+    - Apologize for being so mean to me.
+
+    + sorry
+    - Okay--I'll forgive you.{topic=random}
+  < topic
+
+=head2 RiveScript Objects
+
+Objects are bits of Perl code which can be called within a reply. To declare an
+object, use the LABEL commands to name the object, and then provide some Perl code.
+
+Create a new RiveScript document named "objects.rs" and we'll start with a simple
+localtime-returning object:
+
+  > object localtime
+    my ($method,$data) = @_;
+    return localtime();
+  < object
+
+Now we have an object named "localtime" which returns Perl's localtime() value. Now
+how to use it?
+
+Refer back to the trigger above that looks like this:
+
+  + [what] [@be] [the] time [@be] [it]
+  - I don't know what time it is, go find a clock.
+
+Now, instead of the bot telling you it can't get the time, we'll make it so it can
+get the time!
+
+  + [what] [@be] [the] time [@be] [it]
+  - The time is currently &localtime()
+
+Test it.
+
+So what are $method and $data that the object received? You can micro-manage your
+objects by creating methods for them. Here's an example of a (simple?) text-encoder,
+which will encode things in either Base64 or MD5_Hex.
+
+  > object encode
+    my ($method,$data) = @_;
+
+    use MIME::Base64 qw(encode_base64);
+    use Digest::MD5 qw(md5_hex);
+
+    if ($method eq 'base64') {
+      return encode_base64($data);
+    }
+    elsif ($method eq 'md5') {
+      return md5_hex($data);
+    }
+  < object
+
+And now we can test that with these triggers:
+
+  + base64 encode *
+  - "<star>" encoded in Base64: &encode.base64(<star>)
+
+  + md5 encode *
+  - "<star>" encoded in MD5: &encode.md5(<star>)
+
+So, $method is the word after the "." and $data is the info passed inside the parenthesis.
+Note that $data is I<always> a scalar. So if you use commas to separate multiple arguments,
+your object will have to B<split> the scalar into an array.
+
+=head2 Reply Tag Reference
+
+Various tags have been shown in examples here, but there are many other tags available
+in RiveScript responses. Here is a listing of all of them and how to use them:
+
+=head3 E<lt>starE<gt>
+
+Inserts the captured value of wildcards or alternations/optionals or arrays. When dealing
+with multiple stars, use E<lt>star1E<gt>...E<lt>starNE<gt>
+
+=head3 E<lt>input1E<gt>-E<lt>input9E<gt>
+
+Inserts the last 1 to 9 things the user said, or "undefined" if the user hasn't sent enough
+messages to match whatever input history you're trying to show.
+
+  + what did i just say
+  - You just said "<input1>"
+
+=head3 E<lt>reply1E<gt>-E<lt>reply9E<gt>
+
+Inserts the last 1 to 9 things the bot replied with.
+
+  + why did you say that
+  - I said "<reply1>" because you said "<input1>"
+
+=head3 E<lt>idE<gt>
+
+Inserts the user's ID (the one passed in with the Perl code from B<reply()>)
+
+=head3 E<lt>botE<gt>
+
+Insert a bot variable or an environment variable.
+
+  + who are you
+  - I am <bot name>, a bot created by <bot owner>.
+
+=head3 E<lt>getE<gt>, E<lt>setE<gt>
+
+Get and set a user's variable.
+
+=head3 E<lt>addE<gt>, E<lt>subE<gt>, E<lt>multE<gt>, E<lt>divE<gt>
+
+Add, subtract, multiply, or divide numeric user variables, respectively.
+
+  + double my points
+  - <mult points=2>I have doubled your points. You now have <get points>.
+
+=head3 {topic=...}
+
+Set the user's topic to something else.
+
+=head3 {nextreply}
+
+Breaks the bot's reply into two (or more) replies at this tag.
+
+=head3 {weight=...}
+
+Give responses a different probability of being chosen. The weight must be greater
+than or equal to 1.
+
+=head3 {@...}
+
+An inline redirection.
+
+  + * or something
+  - Or something. {@<star>}
+
+"Are you a bot or something?" "Or something. How did you know I am a machine?"
+
+=head3 {!...}
+
+An inline definition.
+
+  + set your name to joe
+  - {! var name = Joe}I have set my name to Joe.
+
+=head3 {random}...{/random}
+
+Insert a small bit of random text within a single reply.
+
+  + say something random
+  - This {random}reply response output{/random} has a random {random}word noun{/random}.
+
+To have multiple-word items, separate them with pipes instead of spaces.
+
+  + give me a fortune cookie
+  - Your fortune: {random}You will be rich.|You will be famous.{/random}
+
+=head3 {person}...{/person}
+
+The text between these tags will have Person Substitutions run on them.
+
+=head3 {formal}...{/formal}
+
+Makes Your Text Formal (Every Word Begins With A Capital)
+
+=head3 {sentence}...{/sentence}
+
+Makes only the first word of the message formal, the rest lowercase.
+
+=head3 {uppercase}...{/uppercase}
+
+FOR UPPERCASE TEXT.
+
+=head3 {lowercase}...{/lowercase}
+
+for very lowercased text.
+
+=head3 {ok}
+
+Used in the BEGIN statement to know it's okay to get a reply.
+
+=head3 \s
+
+Inserts a white space.
+
+=head3 \n
+
+Inserts a new line.
+
+=head1 RIVESCRIPT LIBRARIES AND PACKAGES
+
+Back in the beginning of this tutorial, we told RiveScript to use the library "English.rsl"
+to give us lots of useful arrays we might want to use in triggers. But what is a library?
+
+Libraries and Packages are special RiveScript documents. Their purpose is to allow multiple
+brains to share common objects and array definitions, without having to copy and paste them
+into each brain's directory. Think of them like Perl modules. Any number of Perl scripts can
+use the same modules.
+
+=head2 Library and Package Search Paths
+
+Currently, RiveScript searches for included files in the following locations:
+
+  1. Any of the values of Perl's @INC, with "/RiveScript/RSLIB" appended.
+  2. The working directory of the Perl script running the RiveScript interpreter.
+
+Since English.rsl comes with the RiveScript distribution, it can be found in your
+/usr/site/lib/RiveScript/RSLIB/ directory. This is the recommended place to put
+all your RiveScript libraries and packages.
+
+If you would like to specify a new path for RiveScript to look for include files, use
+the !addpath directive:
+
+  ! addpath C:/MyRsLibs
+
+=head2 RiveScript Library
+
+A RiveScript Library file is a special RiveScript document which consists of nothing but
+array declarations, substitutions, etc. (things you may declare in a config.rs file too).
+
+The "English.rsl" library that comes with RiveScript includes "English/EnglishNouns.rsl",
+"English/EnglishAdj.rsl", and "English/EnglishVerbs.rsl" which define tons of arrays for
+English words and their other varied forms.
+
+=head2 RiveScript Package
+
+A RiveScript Package is a special RiveScript document which consists of one (or more)
+object declarations. For example, you might create a RiveScript package full of objects
+for performing web searches, and have a different object for each of Google, Yahoo Search,
+MSN Search, etc.
+
+=head1 CREATIVITY
+
+By now you should have a grasp on the RiveScript language. What you do with it is
+up to your own creativity. You can combine any of the elements you learned about to
+get some pretty neat effects.
+
+=head1 SEE OTHER
+
+Look at the RiveScript manpage. It would definitely help.
+
+=head1 AUTHOR
+
+Cerone J. Kirsle, kirsle --at-- rainbowboi.com

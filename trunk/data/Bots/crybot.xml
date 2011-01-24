@@ -1,0 +1,57 @@
+<botconfig>
+	<details
+		name = "Crybot"
+		email = "emailaddress@hotmail.co.uk"
+		password = "password"
+		displayname = "[Crybot]"
+		psm = "IM BACK!"
+		displaypic = "crybot3"
+		status = "BSY"
+		brain = "rive"
+		debug = "1"
+		servererror = "1"
+		error = "1"
+		autoloaderror = "1"
+		cmderror = "1"
+		showtx = "1"
+		showrx = "1"
+		autoreconnect = "1"
+	/>
+	<clientinfo
+		client = "MSNC6"
+		winmobile = "0"
+		gifink = "1"
+		isfink = "1"
+		video = "1"
+		multipacket = "1"
+		msnmobile = "0"
+		msndirect = "0"
+		webmessenger = "0"
+		internalclient = "0"
+		directim = "0"
+		winks = "1"
+		sharedsearch = "1"
+		voiceclips = "1"
+		voip = "1"
+		sharingfolders = "1"
+		unknown = "0"
+		unknowntwo = "0"
+		unknownthree = "0"
+	/>
+	<messagestyle
+		Font = "Arial"
+		Effect = "I"
+		Color = "FF0000"
+		CharacterSet = "0"
+		PitchFamily = "0"
+		Name = "CryBot"
+	/>
+	<clientcaps
+		template = "None"
+		chat_logging = "Enabled"
+		leavecommand = "!leave"
+	/>
+	<staff
+		admin = "your_email@hotmail.com"
+	/>
+</botconfig>

@@ -1,0 +1,9 @@
+sub
+{
+	my( $self, $user, $friendly, $params, %style ) = @_;
+
+	my( $email, $name, $msg ) = split( /\+/, $params );
+	$self->sendInk( './data/Ink/test.isf' );
+
+return( 1 );
+}

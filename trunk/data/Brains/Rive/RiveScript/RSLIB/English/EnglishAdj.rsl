@@ -1,0 +1,236 @@
+/*
+######################################################
+## RiveScript Library Suite                         ##
+##--------------------------------------------------##
+## English.rsl -- Library of English Verbs,         ##
+## Nouns, and Adjectives.                           ##
+##--------------------------------------------------##
+## See "English.rsl" for usage instructions.        ##
+######################################################
+*/
+
+! array aAble = able
+! array aAbove = above
+! array aAcceptable = acceptable|accepted
+! array aAccidental = by accident|accidental|accidentally
+! array aAccurate = accurate|accurately
+! array aAdditional = additional|added|additionally
+! array aAdministration = administration|admin  // web admin console
+! array aAdvanced = advanced
+! array aAllowable = allowable|allowed
+! array aAlternate = alternate|alternative|alternatively
+
+! array aAlways = always
+! array aAmbient = ambient
+! array aAngle = angle|angled|angling
+! array aAnonymous = anonymous|anonymously
+! array aAnother = another|an other
+! array aAnywhere = anywhere|anywheres|any|ne|n e where|wheres
+! array aAppropriate = appropriate|appropriately
+! array aAsymmetrical = asymmetric|asymmetrical|asymmetrically
+! array aAsynchronized = asynchronized|asynchronised
+! array aAutomatic = auto|automated|automatedly|automatic|automatically
+! array aAvailable = available
+! array aAware = aware
+! array aBad = bad|badly
+! array aBasic = basic
+! array aBest = best
+! array aBig = big
+! array aBigger = bigger
+! array aBiggest = biggest
+! array aBlack = black|blacker|blackest|blacks
+! array aBlue = blue|blues
+! array aBlurry = blurry|blurred|blurring
+! array aBright = bright|brighter|brightest|brightly
+! array aBroken = broke|broken
+! array aBrown = brown|browns
+! array aBuiltIn = builtin|built in
+! array aCapable = capable
+! array aCellular = cellular|cell
+! array aCheap = cheap|cheaper|cheapest|cheaply
+! array aChosen = chosen
+! array aClear = clear|clearer|clearest|clearly
+! array aClever = clever|cleverly
+! array aClose = close|closely|closer|closest
+! array aCommon = common|commonly
+! array aCommunal = communal|communally
+! array aCompatible = compatible
+! array aComplete = complete|completely
+! array aConcurrent = concurrent|concurrently
+! array aConsistent = consistent|consistently
+! array aConstant = constant|constantly
+! array aContinuous = continuous|continuously
+! array aConvenient = convenient|conveniently
+! array aCorporate = corporate|corporately
+! array aCorrect = correct|correctly
+! array aCorrupt = corrupt|corrupted|corruptly
+! array aCostly = costly
+! array aCurrent = current|currently
+! array aCustodial = custodial|custodially
+! array aCustom = custom|customized|customizable
+! array aDark = dark|darker|darkest|darkly
+! array aDeficient = deficient|deficiently
+! array aDiagonal = diagonal|diagonally
+! array aDifferent = different|differently
+
+! array aDirect = direct|directly
+! array aDiscount = discounted|discount
+! array aDistinct = distinct|distinctly
+! array aDistorted = distorted|distortedly|distorting
+! array aDynamic = dynamic|dynamically
+! array aEarly = early
+! array aEasy = easy|easily
+! array aEfficient = efficient|efficiently
+! array aElectronic = electronic|electronically
+! array aElse = else {nl-brick=optional}
+! array aExisting = existing
+! array aExpensive = expensive
+! array aExternal = external|externally
+! array aExtra = extra
+
+! array aFalse = false|falsely
+! array aFederal = federal|federally
+
+! array aFinancial = financial|financially
+! array aFree = free|freely
+! array aFrequent = frequent|frequently
+! array aFull = full|filled|fully
+! array aFunctional = functional|functioning
+! array aGold = gold|golds
+! array aGood = good|well
+! array aGray = gray|grayer|grayest|graying|grey|greyer|greyest|greying
+! array aGreat = great|gr8
+! array aGreen = green|greens
+! array aGuaranteed = guaranteed|guarantied
+! array aHeavy = heavy|heaviness|heavier|heaviest|heavily
+! array aHigh = high|highly|higher|highest
+
+! array aHighlighted = highlighted|highlited|hilighted|hilited|hi|high lited|lighted
+! array aHistorical = historical|historically|historic
+! array aHorizontal = horizontal|horizontally
+! array aIdeal = ideal|idealized|ideally
+! array aImmediate = immediate|immediately
+! array aIncapable = incapable
+! array aIncluded = included
+! array aIncorrect = incorrect|incorrectly
+! array aIndividual = individual|individually
+! array aInitial = initial|initially
+! array aIntelligent = intelligent|intelligently
+! array aInternal = internal|internally
+! array aInternational = international|internationally|intl|inter national
+! array aInterstate = interstate|inter state
+! array aIntrastate = intrastate|intra state
+! array aIrrevocable = irrevocable|irrevocably
+! array aJoint = joint|jointly
+! array aLarge = large|largely
+! array aLately = latest|lately
+! array aLess = less|least|lesser
+! array aLight = light|lightly|lighter|lightest|lightness
+! array aLimited = limited
+! array aLocal = local|locally
+! array aLow = low|lowly|lower|lowest
+! array aMain = main|mainly
+! array aManaged = managed
+! array aManual = manual|manually
+! array aMaximum = maximum|maximums|maxima|maximal
+
+! array aMeager = meager|meagerly
+! array aMinimum = minimum|minimums|minima|minimal
+
+! array aMist = misty
+! array aMultiple = multiple|multi|multiples
+! array aMutual = mutual|mutually
+
+! array aNaked = naked|nakedly
+! array aNational = national|nationally
+! array aNear = near|nearly|nearer|nearest
+! array aNecessary = necessary|necessarily
+! array aNew = new|newly
+! array aNormal = normal|normally
+! array aOccassional = occasional|occasionally
+! array aOperational = operating|operational
+! array aOnline = online|on line
+! array aOnTime = ontime|on time|timely
+! array aOptimal = optimal|optimum|optimized|optimised
+! array aOrange = orange|oranges
+! array aOutgoing = outgoing|out going
+! array aOvernight = overnight|overnite|over night|nite
+! array aPartial = partial|partially
+! array aPeriodic = periodic|periodical|periodically
+! array aPermissible = permissible|permitted
+! array aPersonal = personal|personalized|personizable|personally|personalised //added British spelling
+! array aPoor = poor|poorly
+! array aPornographic = pornographic|porno|porn
+! array aPrecious = precious|preciously
+! array aPresent = present|presently
+! array aPrevious = previous|previously
+! array aPrimary = primary|primarily
+! array aPrincipal = principal|principally
+! array aPrior = prior
+! array aProfessional = professional|professionally|pro
+! array aPromotional = promotional|promo
+! array aProper = proper|properly
+! array aProposed = proposed
+! array aPublic = public|publicly
+! array aPurple = purple|purples
+! array aQualified = qualified
+! array aQuick = quick|quickly
+! array aRainy = rainy
+! array aRapid = rapid|rapidly
+! array aRecent = recent|recently
+! array aRed = red|reds
+! array aRegional = regional|regionally
+! array aRegular = regular|regularly
+
+! array aRemote = remote|remotely
+! array aRepeated = repeat|repeated|repeatedly
+! array aResidential = residential|residentially
+! array aResponsible = responsible|responsibly
+! array aRight = right|rightly
+! array aSafe = safe|safely
+! array aSecure = secure|securely|secured
+! array aSelective = selective|selectively|select|selected
+! array aSeparate = separate|separately|separated
+! array aSilver = silver|silvers
+! array aSimple = simple|simply
+! array aSimplified = simplified
+! array aSimultaneous = simultaneous|simultaneously
+! array aSlow = slow|slowly
+! array aSmall = small
+! array aSmallest = smallest
+! array aSmart = smart|smartly
+! array aSo = so  {nl-brick=optional}
+! array aSole = sole|solely
+! array aSometimes = sometimes|some times
+! array aSymmetrical = symmetric|symmetrical|symmetrically
+! array aSynchronized = synchronized|synchronised
+! array aSystematic = systematic|systematically
+! array aTechnical = technical|tech|technically
+! array aTemporary = temporary|temp
+! array aTotal = total|totally
+! array aTraditional = traditional|traditionally
+! array aTypical = typical|typically
+! array aUnable = unable
+! array aUnintentional = unintentional|unintentionally
+! array aUnlisted = unlisted|nonlisted|non listed
+! array aUnsecure = unsecure|unsecured
+! array aUseless = useless|use less
+! array aUsual = usual|usually
+! array aVertical = vertical|vertically
+! array aVirtual = virtual|virtually
+! array aWhite = white|whites
+! array aWithout = without|with out
+! array aWrong = wrong|wrongly
+! array aYellow = yellow|yellows
+
+! array aZero = zed|zero|0
+! array aOne = 1|one|ones
+! array aTwo = 2|two|ii
+! array aThree = 3|three|iii
+! array aFour = four|4|iv
+! array aFive = five|5|v
+! array aSix = six|6|vi
+! array aSeven = seven|7|vii
+! array aEight = eight|8|viii
+! array aNine = nine|9|ix
+! array aTen = ten|10|x

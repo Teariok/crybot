@@ -1,0 +1,10 @@
+# verbs
+
+type=VERB
+
+ski
+eat
+swim
+drink
+fish
+play hockey
