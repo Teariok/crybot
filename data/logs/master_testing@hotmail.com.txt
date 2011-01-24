@@ -1,0 +1,54 @@
+User: hello
+Bot: Hello there!
+User: YO!
+Bot: Hello undefined!
+User: my name is Teario
+Bot: That's my master's name too.
+User: what is my name?
+Bot: Your name is Teario.
+User: w00t
+Bot: k.
+User: asdfghjkl
+Bot: k.
+User: yo!
+Bot: Hey!
+User: where is your display pic?
+Bot: Where it belongs.
+User: what is your name?
+Bot: I am Crybot.
+User: count replies
+Bot: So....
+User: system count replies
+Bot: I currently have ERR(Macro Failure) replies.
+User: how many replies do you have?
+Bot: I currently have ERR(Macro Failure) replies.
+User: pants
+Bot: I see.
+User: are you male or female?
+Bot: I'm a male.
+User: today is tuesday
+Bot: I'm bored.
+User: what day is it?
+Bot: I believe it's $day.
+User: yo!
+Bot: Hello undefined!
+User: my name is Teario
+Bot: That's my master's name too.
+User: yo!
+Bot: Hello Teario!
+User: yo
+Bot: Hello undefined!
+User: my name is Teario
+Bot: That's my master's name too.
+User: eh?
+Bot: Do crabs think that humans walk sideways?
+User: etf?
+Bot: k.
+User: AHA!
+Bot: k.
+User: ray is stupid
+Bot: lol
+User: do you agree?
+Bot: Of course I agree.
+User: i knew you would
+Bot: heh

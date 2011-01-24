@@ -1,0 +1,31 @@
+# insult words
+
+# you can have multiple word types per file, but remember to use the type=WHATEVER to set or change the type
+# if you don't set at least one type, none of the words will be loaded
+# if you don't change the type, all the words will fall under whatever type is currently active
+
+type=INSULTPERSON
+
+idiot
+slimebag
+dork
+nerd
+dummy
+doofus
+dimwit
+
+type=INSULTANIMAL
+
+weasel
+snake
+jackass
+dingbat
+
+type=INSULTADJECTIVE
+
+lazy
+dorky
+nerdy
+fat
+stupid
+dumb

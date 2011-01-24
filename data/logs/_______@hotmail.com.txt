@@ -1,0 +1,57 @@
+User: hi
+Bot: Hello undefined!
+User: who is this
+Bot: I am Crybot.
+User: nice to meet u 
+Bot: Thanks.
+User: home
+Bot: Welcome <b>home</b>, undefined! Here's what I can do:
+
+1. General
+2. Utilities
+3. Fun and Games
+4. Misc.
+
+Type "<b>quit</b>" to exit the menu!
+User: 1
+Bot: General Menu
+
+rules - AidenBot Rules - READ FIRST!
+about - All about Aiden!
+stats - My Current Statistics!
+copyright - Copyright information
+
+Type "<b>home</b>" to go back to the main menu!
+User: home
+Bot: Welcome <b>home</b>, undefined! Here's what I can do:
+
+1. General
+2. Utilities
+3. Fun and Games
+4. Misc.
+
+Type "<b>quit</b>" to exit the menu!
+User: 3
+Bot: Fun and Games Menu
+
+hangman - Game of Hangman
+aol - 101 Uses for an AOL Disc
+azulian name - Random Azulian Names
+insult - Random Insult Generator
+insult [name] - Insult Somebody
+
+Type "<b>home</b>" to go back to the main menu!
+User: insult
+Bot: You insufferable eruption of sun-ripened chicken guts.
+User: insult
+Bot: You witless excuse for fresh sweat socks.
+User: more
+Bot: You want more?
+User: you fatty pig
+Bot: Do I?
+User: gmt
+Bot: So anyways . . .
+User: i a emo
+Bot: I see.
+User: mahahahahha
+Bot: I see.

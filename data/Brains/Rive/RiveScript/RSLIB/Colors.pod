@@ -1,0 +1,105 @@
+=head1 NAME
+
+Colors.rsl - Library of Color Names
+
+=head1 DESCRIPTION
+
+This package exports the following arrays:
+
+B<aColorName> - An array of color names (even the obscure ones)
+
+B<anEyeColor> - An array of common eye colors
+
+B<aWindowsColor> - An array of the color names of the 16 standard
+Windows colors.
+
+=head1 USAGE
+
+  + my favorite color is (@aColorName)
+
+  + my eyes are (@anEyeColor)
+
+=head1 AUTHOR
+
+  Cerone Kirsle <kirsle at rainbowboi.com>
+  Created: 1:11 PM 4/15/2006
+  Updated: 10:35 AM 4/26/2006
+
+=head1 SOURCE
+
+  /*
+  ########################################################
+  ## RiveScript Library Suite                           ##
+  ##--------------------------------------------------  ##
+  ## Colors.rsl -- Library of Color Names               ##
+  ##--------------------------------------------------  ##
+  ## Author: Cerone Kirsle <kirsle at rainbowboi.com>   ##
+  ## Created: 1:11 PM 4/15/2006                         ##
+  ## Updated: 10:35 AM 4/26/2006                        ##
+  ##--------------------------------------------------  ##
+  ## Usage:                                             ##
+  ##   Use these arrays in your triggers:               ##
+  ##                                                    ##
+  ##   @aColorName    = A name of any color             ##
+  ##   @anEyeColor    = A name of a common eye color    ##
+  ##   @aWindowsColor = One of the 16 Windows colors    ##
+  ########################################################
+  */
+
+  ! array aColorName = white|whitesmoke|white smoke|gainsboro|lightgrey|light grey|
+    ^ lightgray|lightgrey|silver|darkgray|dark gray|darkgrey|dark grey|
+    ^ gray|grey|dimgray|dim gray|black|
+
+    ^ lightsteelblue|light steel blue|navyblue|navy blue|lightslategray|
+    ^ light slate gray|slategray|slate gray|steelblue|steel blue|royalblue|
+    ^ royal blue|cornflowerblue|cornflower blue|mediumslateblue|medium slate blue|
+    ^ lightslateblue|light slate blue|slateblue|slate blue|darkslateblue|
+    ^ dark slate blue|midnightblue|midnight blue|navy|darkblue|dark blue|
+    ^ mediumblue|medium blue|blue|dodgerblue|dodger blue|deepskyblue|
+    ^ deep skyblue|deep sky blue|skyblue|sky blue|lightskyblue|light skyblue|
+    ^ light sky blue|lightblue|light blue|powderblue|powder blue|
+
+    ^ azure|lightcyan|light cyan|paleturquoise|pale turquoise|mediumturquoise|
+    ^ medium turquoise|lightseagreen|light sea green|darkcyan|dark cyan|
+    ^ teal|cadetblue|cadet blue|aqua|cyan|darkturquoise|dark turquoise|
+    ^ turquoise|aquamarine|aqua marine|mediumaquamarine|medium aquamarine|
+    ^ medium aqua marine|
+
+    ^ darkseagreen|dark sea green|mediumseagreen|
+    ^ medium sea green|seagreen|sea green|darkgreen|dark green|
+    ^ darkslategray|dark slate gray|darkolivegreen|dark olive green|
+    ^ olive|green|forestgreen|forest green|olivedrab|olive drab|
+    ^ limegreen|lime green|yellowgreen|yellow green|lime|chartreuse|
+    ^ lawngreen|lawn green|greenyellow|green yellow|palegreen|pale green|
+    ^ lightgreen|light green|springgreen|spring green|mediumspringgreen|
+    ^ medium spring green|
+
+    ^ darkkhaki|dark khaki|gold|lightgoldenrod|light goldenrod|
+    ^ khaki|palegoldenrod|pale goldenrod|blanchedalmond|blanced almond|
+    ^ moccasin|wheat|navajowhite|navajo white|sandybrown|sandy brown|
+    ^ tan|burlywood|goldenrod|yellow|rosybrown|rosy brown|darkgoldenrod|
+    ^ dark goldenrod|sienna|saddlebrown|saddle brown|chocolate|peru|
+    ^ darkred|dark red|maroon|brown|firebrick|fire brick|
+
+    ^ orange|indianred|indian red|lightcoral|light coral|salmon|
+    ^ darksalmon|dark salmon|lightsalmon|light salmon|coral|tomato|
+    ^ darkorange|dark orange|orangered|orange red|crimson|red|
+    ^ deeppink|magenta|fuchsia|hotpink|hot pink|pink|lightpink|
+    ^ light pink|mediumorchid|medium orchid|palevioletred|pale violet red|
+    ^ purple|mediumvioletred|medium violet red|violetred|violet red|
+    ^ darkmagenta|dark magenta|mediumpurple|medium purple|blueviolet|
+    ^ blue violet|indigo|darkviolet|dark violet|darkorchid|dark orchid|
+    ^ orchid|violet|plum|thistle|
+
+    ^ lavender|ghostwhite|ghost white|aliceblue|alice blue|
+    ^ mintcream|mint cream|honeydew|honey dew|lightgoldrenrodyellow|
+    ^ light goldenrod yellow|lemonchiffon|lemon chiffon|cornsilk|
+    ^ lightyellow|light yellow|ivory|floralwhite|floral white|linen|
+    ^ oldlace|old lace|antiquewhite|antique white|bisque|peachpuff|
+    ^ peach puff|beige|mistyrose|misty rose|papayawhip|papaya whip|
+    ^ seashell|lavenderblush|lavender blush|snow
+
+  ! array anEyeColor = blue green hazel brown black purple red
+
+  ! array aWindowsColor = aqua black blue fuchsia gray green lime maroon\s
+    ^ navy olive purple red silver teal white yellow

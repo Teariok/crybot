@@ -1,0 +1,25 @@
+/*
+######################################################
+## RiveScript Library Suite                         ##
+##--------------------------------------------------##
+## English.rsl -- Library of English Verbs,         ##
+## Nouns, and Adjectives.                           ##
+##--------------------------------------------------##
+## Author: Cerone Kirsle <kirsle at rainbowboi.com> ##
+## Created: 10:41 AM 3/12/2006                      ##
+## Updated: 10:42 AM 3/12/2006                      ##
+##--------------------------------------------------##
+## Usage:                                           ##
+##   All adjective arrays begin with a lowercase a  ##
+##   and a formal word. For instance, "aAble" or    ##
+##   "aAcceptible"                                  ##
+##                                                  ##
+##   The nouns and verbs have similiar formats, eg. ##
+##   "nAbbreviation" or "vAbort"                    ##
+######################################################
+*/
+
+// Include sub-libraries.
+! include English/EnglishAdj.rsl
+! include English/EnglishNouns.rsl
+! include English/EnglishVerbs.rsl

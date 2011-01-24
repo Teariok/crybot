@@ -1,0 +1,10 @@
+Trigger Data .1
+\b(hi|hello|hey)\b###hi|hello|hey|hi there|hey there|hello there|wassup?|wasup?|sup?|wassup|wasup|sup|how are you?|how r u?|how's it going?
+what's up|what is up|whats up|wassup|wasup|sup###not much|nothing|nada|nuttin|the sky, haha
+bye|cya|later|ciao|adios###bye|cya|later|ciao|adios
+your name|ur name|what are you called|what r u called|got a name###Frank|I'm Frank|Frank, u?|Frank, what's yours?|call me Frank|Frank... why?|Frank, you?
+how old are you|how old r u|how old are u|how old r you|your age|ur age###15|just turned 15|15... you?|15... u?|I'm 15, and u?
+who created you|who created u|who's ur programmer|who's your programmer|who made you|who made u###some programmer geek|some dorky programmer|my master, duh|a programmer
+fortune###service:http://www.botwork.com/cgi-bin/fortune.cgi?direct=get
+bart|simpson###service:http://www.botwork.com/cgi-bin/bartsimpson.cgi?direct=get
+what is a \b.+\b|what is an \b.+\b|what is \b.+\b###service:http://www.botwork.com/cgi-bin/simplestatement.cgi?direct=##MESSAGE##

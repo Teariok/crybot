@@ -1,0 +1,103 @@
+/*
+######################################################
+## RiveScript Package                               ##
+##--------------------------------------------------##
+## DateTime.rsp -- Objects for returning formatted  ##
+## Date and Time strings.                           ##
+##--------------------------------------------------##
+## Author: Cerone Kirsle <kirsle at rainbowboi.com> ##
+## Created: 4:42 PM 4/4/2006                        ##
+## Updated: 4:42 PM 4/4/2006                        ##
+##--------------------------------------------------##
+## Usage:                                           ##
+##   &datetime(STRING)                              ##
+##                                                  ##
+##   Month   = Full month name ("January")          ##
+##   Mon     = Abbrev. Month Name ("Jan")           ##
+##   MNum    = Month of Year ("1..12")              ##
+##   Weekday = Full day of the week ("Monday")      ##
+##   Day     = Abbrev. Day Name ("Mon")             ##
+##   D       = Day of Month ("1..31")               ##
+##   DD      = Padded Day of Month ("01..31")       ##
+##   Year    = Full Year ("2006")                   ##
+##   YYYY    = 4-Digit Year ("2006")                ##
+##   YY      = 2-Digit Year ("06")                  ##
+##   HM      = Military Hour ("0..23")              ##
+##   HHM     = Padded Military Hour ("00..23")      ##
+##   H       = Hour ("1..12")                       ##
+##   HH      = Padded Hour ("01..12")               ##
+##   AM      = AM or PM ("AM..PM")                  ##
+##   M       = Minutes ("0..59")                    ##
+##   MM      = Padded Minutes ("00..59")            ##
+##   S       = Seconds ("0..59")                    ##
+##   SS      = Padded Seconds ("00..59")            ##
+######################################################
+*/
+
+> object datetime
+	my ($method,$string) = @_;
+
+	# Arrays.
+	my @monthnames = qw(January February March April May June July
+		August September October November December);
+	my @monthabbrev = qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+	my @daynames = qw(Sunday Monday Tuesday Wednesday Thursday Friday Saturday);
+	my @dayabbrev = qw(Sun Mon Tue Wed Thu Fri Sat);
+
+	# Hash to hold temporary details.
+	my %data = ();
+
+	# Get the timestamp.
+	my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time());
+	$year += 1900;
+
+	# Get the month name.
+	$data{month} = $monthnames [ $mon ];
+	$data{mon}   = $monthabbrev [ $mon ];
+	$data{mnum}  = $mon + 1;
+
+	# Get the day name.
+	$data{weekday} = $daynames [ $wday ];
+	$data{day}     = $dayabbrev [ $wday ];
+	$data{d}       = $mday;
+	$data{dd}      = $mday;
+	$data{dd}      = '0' . $data{dd} until length $data{dd} == 2;
+
+	# Format the years.
+	$data{year}    = $year;
+	$data{yyyy}    = $year;
+	$data{yy}      = substr($data{yyyy},2,3);
+
+	# Format the hours.
+	$data{hm}      = $hour;
+	$data{hhm}     = $hour;
+	$data{hhm}     = '0' . $data{hhm} until length $data{hhm} == 2;
+	$data{h}       = $hour;
+	$data{hh}      = 0;
+	$data{am}      = 'AM';
+	if ($data{h} > 12) {
+		$data{h} -= 12;
+		$data{am} = 'PM';
+		$data{h}  = 12 if $data{h} == 0;
+	}
+	$data{hh}      = $data{h};
+	$data{hh}      = '0' . $data{hh} until length $data{hh} == 2;
+
+	# Format the minutes.
+	$data{m}       = $min;
+	$data{mm}      = $min;
+	$data{mm}      = '0' . $data{mm} until length $data{mm} == 2;
+
+	# Format the seconds.
+	$data{s}       = $sec;
+	$data{ss}      = $sec;
+	$data{ss}      = '0' . $data{ss} until length $data{ss} == 2;
+
+	# Substitute them in.
+	my @keys = qw(mnum month mon weekday day d dd year yy yyyy hhm hh hm h am mm m ss s);
+	foreach my $k (@keys) {
+		$string =~ s/\b$k\b/$data{$k}/ig;
+	}
+
+	return $string;
+< object

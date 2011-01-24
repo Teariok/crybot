@@ -1,0 +1,26 @@
+# basic sentences
+
+# each line contains one sentence
+# do not wrap long lines or paragraphs onto multiple lines or it will be broken up into multiple sentences
+
+# you should always have a MAIN sentence type, since Banter defaults to this if there is an error with the other types
+
+# you can make any kind of sentences you want
+# add any text you want to the sentences and any number of key words (the things in all caps)
+
+# you can have blank lines to make your text more readable
+# you can have comments wherever you like
+
+# the words in capital letters with *'s on both sides are your key words that will be replaced with random words from
+# word lists you define
+# the names of the key words are up to you
+
+type=MAIN
+
+The *ADJECTIVE* *NOUN* *VERB* the *NOUN*.
+I am very *ADJECTIVE*.
+Do you like to *VERB*?
+*ANIMAL*s are the fastest known land animals.
+a *ANIMAL* is my favorite animal.
+My friend *NAME* loves *NAME*.
+I hate *NAME*!!

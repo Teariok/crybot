@@ -1,0 +1,13 @@
+sub
+{
+	my( $self, $user, $friendly, $params, %style ) = @_;
+
+	use FreeDB;
+	my $freedb = FreeDB->new();
+
+	%discs = $freedb->getdiscs( "Fury in the Slaughterhouse" );
+
+	$self->sendMessage( %discs );
+
+return( 1 );
+}

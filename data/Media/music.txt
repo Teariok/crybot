@@ -1,0 +1,161 @@
+﻿$VAR1 = {
+          'Habib Koité and Bamada' => {
+                                         'Muso Ko' => {
+                                                        'I Ka Barra (Your Work)' => 'krazz17@hotmail.com'
+                                                      }
+                                       },
+          'Meat Loaf' => {
+                           'Bat Out Of Hell (25th Anniversary Edition)' => {
+                                                                             'You Took The Words Right Out Of My Mouth' => 'krazz17@hotmail.com'
+                                                                           }
+                         },
+          'Prodigy' => {
+                         'The Fat Of The Land' => {
+                                                    'Funky Shit' => 'krazz17@hotmail.com',
+                                                    'Serial Thrilla' => 'krazz17@hotmail.com',
+                                                    'Mindfields' => 'krazz17@hotmail.com',
+                                                    'Diesel Power' => 'krazz17@hotmail.com'
+                                                  }
+                       },
+          'The Bled' => {
+                          'Silent Treatment' => {
+                                                  'My Bitter Half' => 'krazz17@hotmail.com',
+                                                  'The Silver Lining' => 'krazz17@hotmail.com',
+                                                  'Starving Artiste' => 'krazz17@hotmail.com',
+                                                  'Beheaded My Way' => 'krazz17@hotmail.com',
+                                                  'Breathing Room Barricades' => 'krazz17@hotmail.com',
+                                                  'Some Just Vanish' => 'krazz17@hotmail.com'
+                                                }
+                        },
+          'Meatloaf' => {
+                          'Bat Out of Hell' => {
+                                                 'Paradiese By The Dashboard Light' => 'krazz17@hotmail.com'
+                                               }
+                        },
+          'Nine Inch Nails' => {
+                                 'The Downward Spiral' => {
+                                                            'Eraser' => 'krazz17@hotmail.com'
+                                                          },
+                                 'The Fragile Disc 1' => {
+                                                           'Somewhat Damaged' => 'krazz17@hotmail.com',
+                                                           'Just Like You Imagined' => 'krazz17@hotmail.com'
+                                                         }
+                               },
+          'Muse' => {
+                      'Black Holes And Revelations' => {
+                                                         'Assassin' => 'krazz17@hotmail.com',
+                                                         'Invincible' => 'krazz17@hotmail.com'
+                                                       }
+                    },
+          'Red Hot Chili Peppers' => {
+                                       'Stadium Arcadium' => {
+                                                               'She Looks To Me' => 'krazz17@hotmail.com',
+                                                               'Desecration Smile' => 'krazz17@hotmail.com',
+                                                               'Snow (Hey Oh)' => 'krazz17@hotmail.com',
+                                                               'Hump De Bump' => 'krazz17@hotmail.com',
+                                                               'Slow Cheetah' => 'krazz17@hotmail.com',
+                                                               'Stadium Arcadium' => 'krazz17@hotmail.com',
+                                                               'Strip My Mind' => 'krazz17@hotmail.com',
+                                                               'Tell Me Baby' => 'krazz17@hotmail.com',
+                                                               'Hard to Concentrate' => 'krazz17@hotmail.com',
+                                                               'Readymade' => 'krazz17@hotmail.com',
+                                                               'If' => 'krazz17@hotmail.com',
+                                                               'She&apos;s Only 18' => 'krazz17@hotmail.com'
+                                                             }
+                                     },
+          'Jimmy Eat World' => {
+                                 'Bleed American' => {
+                                                       'Salt Sweat Sugar' => 'krazz17@hotmail.com'
+                                                     },
+                                 'Futures' => {
+                                                'The World You Love' => 'krazz17@hotmail.com'
+                                              }
+                               },
+                      },
+          'Metallica' => {
+                           'Master of Puppets' => {
+                                                    'Orion (Instrumental)' => 'krazz17@hotmail.com'
+                                                  },
+                           'S&amp;M' => {
+                                          'Fuel' => 'krazz17@hotmail.com',
+                                          'One' => 'krazz17@hotmail.com'
+                                        }
+                         },
+          'Coheed And Cambria' => {
+                                    'Good Apollo, I&apos;m Burning Star' => {
+                                                                              'Mother May I' => 'krazz17@hotmail.com',
+                                                                              'The Suffering' => 'krazz17@hotmail.com'
+                                                                            }
+                                  },
+          'Foo Fighters' => {
+                              'There Is Nothing Left To Lose' => {
+                                                                   'Gimme Stitches' => 'krazz17@hotmail.com'
+                                                                 },
+                              'The Colour and the Shape' => {
+                                                              'New Way Home' => 'krazz17@hotmail.com'
+                                                            }
+                            },
+          'The Mars Volta' => {
+                                'Scab Dates' => {
+                                                  'Abrasions Mount The Timpani' => 'krazz17@hotmail.com'
+                                                }
+                              },
+          '+44' => {
+                     'When Your Heart Stops Beating' => {
+                                                          'Interlude' => 'krazz17@hotmail.com'
+                                                        }
+                   },
+          'Coheed &amp; Cambria' => {
+                                      'The Last Supper: Live At Hammerstein Ballroom' => {
+                                                                                           'The Crowing' => 'krazz17@hotmail.com',
+                                                                                           'Intro' => 'krazz17@hotmail.com',
+                                                                                           'In Keeping Secrets Of Silent Earth: 3' => 'krazz17@hotmail.com',
+                                                                                           'Everyting Evil' => 'krazz17@hotmail.com',
+                                                                                           'Delirium Trigger' => 'krazz17@hotmail.com',
+                                                                                           'A Favor House Atlantic' => 'krazz17@hotmail.com',
+                                                                                           'Ten Speed (Of God&apos;s Blood &amp; Burial)' => 'krazz17@hotmail.com',
+                                                                                           'Blood Red Summer' => 'krazz17@hotmail.com',
+                                                                                           'Wake Up' => 'krazz17@hotmail.com'
+                                                                                         },
+                                      'In Keeping Secrets Of Silent Earth: 3' => {
+                                                                                   'A Lot Of Nothing: V' => 'krazz17@hotmail.com',
+                                                                                   'The Crowing' => 'krazz17@hotmail.com',
+                                                                                   'In Keeping Secrets Of Silent Earth: 3' => 'krazz17@hotmail.com',
+                                                                                   'The Ring In Return' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: VII' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: VI' => 'krazz17@hotmail.com',
+                                                                                   'The Velourium Camper III: Al The Killer' => 'krazz17@hotmail.com',
+                                                                                   'Blood Red Summer' => 'krazz17@hotmail.com',
+                                                                                   'The Velourium Camper II: Backend Of Forever' => 'krazz17@hotmail.com',
+                                                                                   '2113' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: X' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: I' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: IV' => 'krazz17@hotmail.com',
+                                                                                   'Cuts Marked In The March Of Men' => 'krazz17@hotmail.com',
+                                                                                   'The Light &amp; The Glass' => 'krazz17@hotmail.com',
+                                                                                   'Three Evils (Embodied In Love And Shadow)' => 'krazz17@hotmail.com',
+                                                                                   'A Favor House Atlantic' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: III' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: IX' => 'krazz17@hotmail.com',
+                                                                                   'The Velourium Camper I: Faint Of Hearts' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: XI' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: VIII' => 'krazz17@hotmail.com',
+                                                                                   'A Lot Of Nothing: II' => 'krazz17@hotmail.com'
+                                                                                 }
+                                    },
+          'The Arcade Fire' => {
+                                 'Funeral' => {
+                                                'Neighborhood #3 (Power Out)' => 'krazz17@hotmail.com'
+                                              }
+                               },
+          'Billy Talent' => {
+                              'Billy Talent II' => {
+                                                     'Surrender' => 'krazz17@hotmail.com'
+                                                   }
+                            },
+          'Damian Marley' => {
+                               'Welcome To Jamrock' => {
+                                                         'Road To Zion' => 'krazz17@hotmail.com'
+                                                       }
+                             }
+        };

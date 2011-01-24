@@ -1,0 +1,12 @@
+<musicdata>
+	<artist name="artist_name">
+		<album name="album_name">
+			<song
+				name="song_name"
+				last_played_by = "example@hotmail.com"
+				times_played = "5"
+				times_bot_played = "8"
+			/>
+		</album>
+	</band>
+</musicdata>
