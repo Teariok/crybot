@@ -1,0 +1,3 @@
+A chat bot written in Perl with various fun actions. Has the ability to respond to conversation or for the user to direct it to perform pre-set commands.
+
+The structure of the bot is very modular; each command and handler resides in its own code file and can simply be dropped right in and start working immediately. A single example bot is provided with many commands to try out. All bots are loaded from xml config files, so creating multiple is simply a matter of dropping in a new config file for each new bot.
